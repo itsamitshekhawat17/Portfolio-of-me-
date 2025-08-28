@@ -1,5 +1,8 @@
+"use client";
+
 import { SkillDataProvider } from "@/components/sub/skill-data-provider";
 import { SkillText } from "@/components/sub/skill-text";
+import { isLowEndDevice } from "@/lib/mobile";
 
 import {
   BACKEND_SKILL,
@@ -19,7 +22,7 @@ export const Skills = () => {
       <SkillText />
 
       <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {SKILL_DATA.map((skill, i) => (
+        {SKILL_DATA.slice(0, isLowEndDevice() ? 8 : SKILL_DATA.length).map((skill, i) => (
           <SkillDataProvider
             key={skill.skill_name}
             src={skill.image}
@@ -31,7 +34,7 @@ export const Skills = () => {
         ))}
       </div>
 
-      {FRONTEND_SKILL.length > 0 && (
+      {FRONTEND_SKILL.length > 0 && !isLowEndDevice() && (
         <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
           {FRONTEND_SKILL.map((skill, i) => (
             <SkillDataProvider
@@ -45,7 +48,7 @@ export const Skills = () => {
           ))}
         </div>
       )}
-      {BACKEND_SKILL.length > 0 && (
+      {BACKEND_SKILL.length > 0 && !isLowEndDevice() && (
         <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
           {BACKEND_SKILL.map((skill, i) => (
             <SkillDataProvider
@@ -59,7 +62,7 @@ export const Skills = () => {
           ))}
         </div>
       )}
-      {FULLSTACK_SKILL.length > 0 && (
+      {FULLSTACK_SKILL.length > 0 && !isLowEndDevice() && (
         <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
           {FULLSTACK_SKILL.map((skill, i) => (
             <SkillDataProvider
@@ -73,7 +76,7 @@ export const Skills = () => {
           ))}
         </div>
       )}
-      {OTHER_SKILL.length > 0 && (
+      {OTHER_SKILL.length > 0 && !isLowEndDevice() && (
         <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
           {OTHER_SKILL.map((skill, i) => (
             <SkillDataProvider
@@ -90,16 +93,22 @@ export const Skills = () => {
 
       <div className="w-full h-full absolute">
         <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
-          <video
-            className="w-full h-auto"
-            preload="false"
-            playsInline
-            loop
-            muted
-            autoPlay
-          >
-            <source src="/videos/skills-bg.webm" type="video/webm" />
-          </video>
+          {typeof window !== 'undefined' && isLowEndDevice() ? (
+            // Static gradient background for mobile devices
+            <div className="w-full h-full bg-gradient-to-br from-purple-900/20 to-cyan-900/20" />
+          ) : (
+            // Video for desktop and high-end devices
+            <video
+              className="w-full h-auto"
+              preload="false"
+              playsInline
+              loop
+              muted
+              autoPlay
+            >
+              <source src="/videos/skills-bg.webm" type="video/webm" />
+            </video>
+          )}
         </div>
       </div>
     </section>

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { RxLinkedinLogo } from "react-icons/rx";
 import { HiOutlineMail, HiOutlineExclamation } from "react-icons/hi";
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/lib/motion";
+import { isLowEndDevice } from "@/lib/mobile";
 
 type FormData = {
   name: string;
@@ -147,16 +148,22 @@ export const Contact = () => {
       {/* Background Video (z-index: -10) */}
       <div className="w-full h-full absolute pointer-events-none">
         <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
-          <video
-            className="w-full h-auto"
-            preload="false"
-            playsInline
-            loop
-            muted
-            autoPlay
-          >
-            <source src="/videos/encryption-bg.webm" type="video/webm" />
-          </video>
+          {typeof window !== 'undefined' && isLowEndDevice() ? (
+            // Static gradient background for mobile devices
+            <div className="w-full h-full bg-gradient-to-b from-[#090015] via-[#131043] to-[#030014]" />
+          ) : (
+            // Video for desktop and high-end devices
+            <video
+              className="w-full h-auto"
+              preload="false"
+              playsInline
+              loop
+              muted
+              autoPlay
+            >
+              <source src="/videos/encryption-bg.webm" type="video/webm" />
+            </video>
+          )}
         </div>
       </div>
 

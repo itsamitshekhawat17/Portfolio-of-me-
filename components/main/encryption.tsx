@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { isLowEndDevice } from "@/lib/mobile";
 
 import { slideInFromTop } from "@/lib/motion";
 
@@ -51,16 +52,22 @@ export const Encryption = () => {
       </div>
 
       <div className="w-full flex items-start justify-center absolute">
-        <video
-          loop
-          muted
-          autoPlay
-          playsInline
-          preload="false"
-          className="w-full h-auto"
-        >
-          <source src="/videos/encryption-bg.webm" type="video/webm" />
-        </video>
+        {typeof window !== 'undefined' && isLowEndDevice() ? (
+          // Static gradient background for mobile devices
+          <div className="w-full h-full bg-gradient-to-b from-[#030014] via-[#131043] to-[#090015]" />
+        ) : (
+          // Video for desktop and high-end devices
+          <video
+            loop
+            muted
+            autoPlay
+            playsInline
+            preload="false"
+            className="w-full h-auto"
+          >
+            <source src="/videos/encryption-bg.webm" type="video/webm" />
+          </video>
+        )}
       </div>
     </div>
   );
