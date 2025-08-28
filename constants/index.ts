@@ -332,7 +332,7 @@ export const EXPERIENCE_DATA = [
     title: "Vice Chair, ACM PIET Student Chapter",
     company: "ACM PIET Jaipur",
     duration: "2025 - Present",
-    description: "Currently serving as Vice Chair of the ACM PIET Jaipur Student Chapter. Collaborating with the executive committee to develop strategic initiatives, organize technical events, and enhance member engagement. Working on the chapter's official website development.",
+    description: "Currently serving as Vice Chair of the ACM PIET Jaipur Student Chapter. Collaborating with the executive committee to develop strategic initiatives, organize technical events, and enhance member engagement. Working on the chapter&apos;s official website development.",
     isLeft: false,
   },
   {
