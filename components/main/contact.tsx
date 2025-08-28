@@ -141,7 +141,7 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden py-20"
+      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pt-8 pb-16"
       style={{ transform: "scale(0.9)" }}
     >
       {/* Background Video (z-index: -10) */}
