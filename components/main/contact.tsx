@@ -180,8 +180,8 @@ export const Contact = () => {
           variants={slideInFromRight(0.5)}
           className="text-[20px] text-gray-200 mb-10 mt-[10px] text-center max-w-[600px]"
         >
-          I'm always open to new opportunities and collaborations.
-          Let's connect and create something amazing together!
+          I&apos;m always open to new opportunities and collaborations.
+          Let&apos;s connect and create something amazing together!
         </motion.div>
       </div>
 
@@ -280,7 +280,7 @@ export const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 className={`w-full bg-[#121212] border ${errors.message ? 'border-red-500' : 'border-[#7042f84d]'} rounded-md p-3 text-white min-h-[120px] focus:outline-none focus:ring-2 focus:ring-[#7042f8]`}
-                placeholder="Hello, I'd like to discuss a project..."
+                placeholder="Hello, I&apos;d like to discuss a project..."
                 aria-invalid={!!errors.message}
                 aria-describedby={errors.message ? "message-error" : undefined}
               />
@@ -329,7 +329,7 @@ export const Contact = () => {
             {submitted && (
               <div className="mt-4 p-3 bg-green-900/30 border border-green-500/50 rounded-md">
                 <p className="text-green-300 text-sm">
-                  Thank you! Your message has been sent successfully. I'll get back to you soon.
+                  Thank you! Your message has been sent successfully. I&apos;ll get back to you soon.
                 </p>
               </div>
             )}
@@ -359,7 +359,7 @@ export const Contact = () => {
           
           <div className="flex-grow flex flex-col justify-between">
             <p className="text-gray-300 mb-6">
-              Let's connect professionally! Follow me on LinkedIn for updates on my latest projects, 
+              Let&apos;s connect professionally! Follow me on LinkedIn for updates on my latest projects, 
               career milestones, and technology insights. Feel free to send a connection request.
             </p>
             
