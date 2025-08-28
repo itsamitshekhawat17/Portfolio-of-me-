@@ -141,7 +141,7 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pt-8 pb-16"
+      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pt-0 pb-8"
       style={{ transform: "scale(0.9)" }}
     >
       {/* Background Video (z-index: -10) */}
@@ -161,7 +161,7 @@ export const Contact = () => {
       </div>
 
       {/* Section Heading */}
-      <div className="flex flex-col items-center justify-center w-full mb-10 z-10">
+      <div className="flex flex-col items-center justify-center w-full mb-6 z-10">
         <motion.div
           variants={slideInFromTop}
           className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
@@ -178,7 +178,7 @@ export const Contact = () => {
         
         <motion.div
           variants={slideInFromRight(0.5)}
-          className="text-[20px] text-gray-200 mb-10 mt-[10px] text-center max-w-[600px]"
+          className="text-[20px] text-gray-200 mb-6 mt-[10px] text-center max-w-[600px]"
         >
           I&apos;m always open to new opportunities and collaborations.
           Let&apos;s connect and create something amazing together!
