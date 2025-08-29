@@ -3,7 +3,6 @@ import { Projects } from "@/components/main/projects";
 import { Skills } from "@/components/main/skills";
 import { EducationExperience } from "@/components/main/education-experience";
 import { Contact } from "@/components/main/contact";
-import { ProfileViewCount } from "@/components/sub/profile-view-count";
 
 export default function Home() {
   return (
@@ -14,7 +13,6 @@ export default function Home() {
         <EducationExperience />
         <Projects />
         <Contact />
-        <ProfileViewCount />
       </div>
     </main>
   );
