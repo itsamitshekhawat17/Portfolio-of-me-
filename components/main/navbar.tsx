@@ -20,8 +20,8 @@ export const Navbar = () => {
           <Image
             src="/Logo.png"
             alt="Logo"
-            width={100}
-            height={100}
+            width={200}
+            height={700}
             draggable={false}
             className="cursor-pointer"
           />
